@@ -1,0 +1,9 @@
+{
+	"name": "copyallfileformats",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "24403b3f-3677-4064-87e4-943da2456dae",
+		"tenantId": "be67460d-1ca3-4b7a-8022-666c8bc0c7b7"
+	}
+}
