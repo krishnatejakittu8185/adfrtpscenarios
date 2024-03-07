@@ -1,0 +1,9 @@
+{
+	"name": "ZipblobstorageFiles",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2714e93f-76c4-4ec5-8676-bf1fea0d02a1",
+		"tenantId": "be67460d-1ca3-4b7a-8022-666c8bc0c7b7"
+	}
+}
