@@ -1,0 +1,9 @@
+{
+	"name": "FIlterCSVFIles",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "39909c18-936c-4a85-bcaf-bd2d9e6f27c8",
+		"tenantId": "be67460d-1ca3-4b7a-8022-666c8bc0c7b7"
+	}
+}
