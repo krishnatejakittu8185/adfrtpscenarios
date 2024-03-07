@@ -1,5 +1,5 @@
 {
-	"name": "DS_GetMetaData",
+	"name": "DS_Sink1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_Source1",
@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "2024",
-				"fileSystem": "input"
+				"folderPath": "2025",
+				"fileSystem": "output"
 			}
 		}
 	},

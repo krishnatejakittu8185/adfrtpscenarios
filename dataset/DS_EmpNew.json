@@ -1,8 +1,8 @@
 {
-	"name": "DS_Sink",
+	"name": "DS_EmpNew",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_Sink",
+			"referenceName": "LS_Source",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,15 +10,33 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "2025",
-				"container": "output"
+				"fileName": "empnew.csv.txt",
+				"folderPath": "2024",
+				"container": "input"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "empid",
+				"type": "String"
+			},
+			{
+				"name": "empname",
+				"type": "String"
+			},
+			{
+				"name": "salary",
+				"type": "String"
+			},
+			{
+				"name": "deptno",
+				"type": "String"
+			}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

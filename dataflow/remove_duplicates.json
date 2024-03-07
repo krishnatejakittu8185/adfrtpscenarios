@@ -1,0 +1,74 @@
+{
+	"name": "remove_duplicates",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_Emp",
+						"type": "DatasetReference"
+					},
+					"name": "emp"
+				},
+				{
+					"dataset": {
+						"referenceName": "DS_EmpNew",
+						"type": "DatasetReference"
+					},
+					"name": "empNew"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_Sink",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "union1"
+				},
+				{
+					"name": "aggregate1"
+				},
+				{
+					"name": "sort1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          empid as string,",
+				"          empname as string,",
+				"          salary as string,",
+				"          deptno as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> emp",
+				"source(output(",
+				"          empid as string,",
+				"          empname as string,",
+				"          salary as string,",
+				"          deptno as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> empNew",
+				"emp, empNew union(byName: true)~> union1",
+				"union1 aggregate(groupBy(empid),",
+				"     each(match(name!='empid'), $$ = first($$))) ~> aggregate1",
+				"aggregate1 sort(asc(empid, true)) ~> sort1",
+				"sort1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:['finalEmployee'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
+			]
+		}
+	}
+}

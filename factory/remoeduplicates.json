@@ -1,0 +1,9 @@
+{
+	"name": "remoeduplicates",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f7df18b6-fb08-4ce4-9a87-1947437b06be",
+		"tenantId": "be67460d-1ca3-4b7a-8022-666c8bc0c7b7"
+	}
+}
