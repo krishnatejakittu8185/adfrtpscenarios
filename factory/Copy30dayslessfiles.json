@@ -1,0 +1,9 @@
+{
+	"name": "Copy30dayslessfiles",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "56d733e2-6e7d-45d2-b404-882470ff8f4c",
+		"tenantId": "be67460d-1ca3-4b7a-8022-666c8bc0c7b7"
+	}
+}

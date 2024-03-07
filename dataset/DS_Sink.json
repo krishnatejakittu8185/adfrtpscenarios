@@ -2,17 +2,27 @@
 	"name": "DS_Sink",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_Sink",
+			"referenceName": "LS_Source",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
 				"folderPath": "2025",
 				"fileSystem": "output"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
